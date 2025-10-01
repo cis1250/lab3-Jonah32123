@@ -33,5 +33,23 @@ user_sentence = input("Enter a sentence: ")
 
 while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
-    user_input = input("Enter a sentence: ")
-    
+    user_sentence = input("Enter a sentence: ")
+words = []
+frequencies = []
+isCopy = 0
+currentWord = ""
+splitSentence = re.split(r'[, \s]+', user_sentence)
+
+for i in range(0, len(splitSentence)):
+    currentWord = splitSentence[i].lower()
+    isCopy = 0
+    for e in range(0, len(words)):
+        if words[e] == currentWord:
+            isCopy = 1
+            frequencies[e] += 1
+    if isCopy == 0:
+        words.append(currentWord)
+        frequencies.append(1)
+
+for i in range(0, len(words)):
+    print("{}: {}".format(words[i], frequencies[i]))
