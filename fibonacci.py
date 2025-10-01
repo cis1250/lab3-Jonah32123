@@ -11,11 +11,14 @@ currentNum = 0
 tmp = 0
 prevNum = 1
 
-if type(userNum) is int and int(userNum) > 0:
-  for i in range(0,int(userNum)):
-    print("{}".format(currentNum), end = " ")
-    tmp = currentNum
-    currentNum += prevNum
-    prevNum = tmp
-else:
+try:
+  if int(userNum) > 0:
+    for i in range(0,int(userNum)):
+      print("{}".format(currentNum), end = " ")
+      tmp = currentNum
+      currentNum += prevNum
+      prevNum = tmp
+  else:
+    print("Please enter a positive integer")
+except Exception:
   print("Please enter a positive integer")
