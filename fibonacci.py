@@ -11,7 +11,7 @@ currentNum = 0
 tmp = 0
 prevNum = 1
 
-if type(userNum) is int and num > 0:
+if type(userNum) is int and userNum > 0:
   for i in range(0,userNum):
     print("{}".format(currentNum), end = " ")
     tmp = currentNum
